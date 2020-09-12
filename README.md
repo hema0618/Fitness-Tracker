@@ -39,4 +39,4 @@ You need PC, laptop or smartphone with Mozilla,Edge or Safari browser to visit t
 
 Heroku-Link  
 
-https://git.heroku.com/workouttracker18.git
+https://workouttracker18.herokuapp.com/
