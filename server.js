@@ -14,6 +14,8 @@ app.use(express.static("public"));
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
   useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useCreateIndex: true,
   useFindAndModify: false,
 });
 
@@ -21,15 +23,15 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
 require("./routes/api-routes.js")(app);
 
 app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname + "/public/index.html"));
+  res.sendFile(path.join(__dirname + "/public/index.html"));
 });
 
 app.get("/exercise", (req, res) => {
-    res.sendFile(path.join(__dirname + "/public/exercise.html"));
+  res.sendFile(path.join(__dirname + "/public/exercise.html"));
 });
 
 app.get("/stats", (req, res) => {
-    res.sendFile(path.join(__dirname + "/public/stats.html"));
+  res.sendFile(path.join(__dirname + "/public/stats.html"));
 });
 
 
